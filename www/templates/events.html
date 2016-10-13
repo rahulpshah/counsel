@@ -14,7 +14,9 @@
         display: block !important;
     }
 </style>  
+<script>
 
+</script>
 <ion-view title="Events" id="page3">
     <ion-content padding="true" class="has-header">
         <button id="events-button2" class="button button-balanced  button-block button-outline">Add Event</button>
@@ -29,19 +31,26 @@
                     <div  class="item-accordion" id="events-container4">
                         <ion-list id="events-list9" ng-show="isEventShown(event)">
                             <ion-item class="item-icon-left" id="events-list-item43">
-                                <i class="icon No Icon"></i>{{event.start_date}}</ion-item>
+                            <p>Start Date</p>
+                                <i class="icon No Icon"></i>{{convert(event.start_date)}}</ion-item>
                             <ion-item class="item-icon-left" id="events-list-item46">
-                                <i class="icon No Icon"></i>{{event.due_date}}</ion-item>
+                            <p>End Date</p>
+                                <i class="icon No Icon"></i>{{convert(event.due_date)}}</ion-item>
                             <ion-item class="item-icon-left" id="events-list-item46">
-                                <i class="icon No Icon"></i>{{event.end_date}}</ion-item>
+                            <p>Due Date</p>
+                                <i class="icon No Icon"></i>{{convert(event.end_date)}}</ion-item>
                             <ion-item class="item-icon-left" id="events-list-item47">
+                            <p>Priority</p>
                                 <i class="icon No Icon"></i>{{event.priority}}</ion-item>
                             <ion-item class="item-icon-left" id="events-list-item48" ui-sref="menu.matter">
+                            <p>Matter</p>
                                 <i class="icon No Icon"></i>{{event.related_to_matter_id}}</ion-item>
                             <ion-item class="item-icon-left" id="events-list-item49">
+                            <p>Status</p>
                                 <i class="icon No Icon"></i>{{event.status}}</ion-item>
                             <ion-item class="item-icon-left" id="events-list-item55">
-                                <i class="icon No Icon"></i>{{event.t}}</ion-item>
+                            <p>Type</p>
+                                <i class="icon No Icon"></i>{{event.type}}</ion-item>
                         </ion-list>
                     </div>
                 </div>
