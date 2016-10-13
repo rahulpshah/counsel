@@ -1,40 +1,33 @@
-<head>
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>jQuery UI Accordion - Default functionality</title>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#accordion" ).accordion();
-  } );
-  </script>
-
-
-</head>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<link rel="stylesheet" href="/resources/demos/style.css">
+<style>
+    .list .item.item-accordion 
+    {
+          line-height: 38px;
+          padding-top: 0;
+          padding-bottom: 0;
+          transition: 0.09s all linear;
+    }
+    .list .item.item-accordion.ng-hide {
+        line-height: 0px;
+    }
+    .list .item.item-accordion.ng-hide-add,
+    .list .item.item-accordion.ng-hide-remove {
+        display: block !important;
+    }
+</style>  
 
 <ion-view title="Events" id="page3">
     <ion-content padding="true" class="has-header">
         <button id="events-button2" class="button button-balanced  button-block button-outline">Add Event</button>
-        
-        <div id="accordion">
-            
-        </div>
         <div id="events-button-bar1" class="button-bar">
         </div>
-
+            <div class="list">
                 <div class="list card" id="events-card24" ng-repeat="event in events">
-                        <ion-item class="item-icon-right" id="events-list-item41">
-                            <i class="icon ion-edit"></i>{{event.assignee + " " + event.subject}}
+                        <ion-item class="item-icon-right" id="events-list-item41" ng-click="toggleEvent(event)" ng-class="{active: isEventShown(event)}">
+                            <i class="icon ion-edit"></i>{{event.subject}}
                         </ion-item>
-                <div class="item item-body" id="events-list-item-container12">
-                    <div id="events-container4">
-                        <ion-list id="events-list9">
+                <div class="item item-body"  id="events-list-item-container12">
+                    <div  class="item-accordion" id="events-container4">
+                        <ion-list id="events-list9" ng-show="isEventShown(event)">
                             <ion-item class="item-icon-left" id="events-list-item43">
                                 <i class="icon No Icon"></i>{{event.start_date}}</ion-item>
                             <ion-item class="item-icon-left" id="events-list-item46">
@@ -52,8 +45,8 @@
                         </ion-list>
                     </div>
                 </div>
-
-
+                </div>
             </div>
     </ion-content>
 </ion-view>
+
