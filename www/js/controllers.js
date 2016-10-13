@@ -23,8 +23,6 @@ function ($scope, $stateParams) {
 function ($scope, $stateParams, Events) {
 	$scope.events = Events.items;
 	$scope.toggleEvent = function(event) {
-		console.log("he");
-
     if ($scope.isEventShown(event)) {
       $scope.shownEvent = null;
     } else {
@@ -32,8 +30,7 @@ function ($scope, $stateParams, Events) {
     }
   };
   $scope.isEventShown = function(event) {
-  	console.log("hi");
-  
+
     return $scope.shownEvent === event;
   };
 
