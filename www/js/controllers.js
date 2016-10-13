@@ -20,6 +20,8 @@ function ($scope, $stateParams) {
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 function ($scope, $stateParams) {
+
+
 	$scope.events = [
 		{
 			name:"rhaul",
@@ -30,6 +32,7 @@ function ($scope, $stateParams) {
 			id:"2"
 		}
 	];
+
 
 }])
    
