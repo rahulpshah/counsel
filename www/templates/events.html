@@ -1,9 +1,9 @@
 <ion-view title="Events" id="page3">
     <ion-content padding="true" class="has-header">
         <button id="events-button2" class="button button-balanced  button-block button-outline">Add Event</button>
-        <ion-list id="events-list4">
+        <ion-list id="events-list4" ng-repeat="event in events">
             <ion-item class="item-icon-left" id="events-list-item11">
-                <i class="icon ion-chevron-right"></i>Item</ion-item>
+                <i class="icon ion-chevron-right"></i>{{event.name + " " + event.id}}</ion-item>
         </ion-list>
     </ion-content>
 </ion-view>
