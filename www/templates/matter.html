@@ -1,3 +1,16 @@
-<ion-view title="Matter" id="page4">
-    <ion-content padding="true" class="has-header">{{matter_name}}</ion-content>
+<ion-view title="Matter's Notes" id="page4">
+    <ion-content padding="true" class="has-header">
+        <div class="list card" id="matterSNotes-card22">
+            <ion-item id="matterSNotes-list-item62">{{notes.title}}</ion-item>
+            <div class="item item-body" id="matterSNotes-list-item-container19">
+                <div id="matterSNotes-container5">
+                    <form id="matterSNotes-form4" class="list">
+                        <label class="item item-input" id="matterSNotes-textarea1">
+                            <span class="input-label">{{notes.text}}</span><textarea placeholder=""></textarea>
+                        </label>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </ion-content>
 </ion-view>

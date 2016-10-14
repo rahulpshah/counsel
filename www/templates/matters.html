@@ -19,7 +19,7 @@
 </script>
 <ion-view title="Matters" id="page3">
     <ion-content padding="true" class="has-header">
-        <button id="matters-button2" class="button button-balanced  button-block button-outline">Add Matter</button>
+        <button id="matters-button2" class="button button-balanced button-block button-outline">Add Matter</button>
         <div id="matters-button-bar1" class="button-bar">
         </div>
             <div class="list">
@@ -27,8 +27,8 @@
                         <ion-item class="item-icon-right" id="-list-item41" ng-click="toggleMatter(matter)" ng-class="{active: isMatterShown(matter)}">
                             <i class="icon ion-edit"></i>{{matter.title}}
                         </ion-item>
-                <div class="item item-body" id="events-list-item-container12">
-                    <div  class="item-accordion" id="events-container4">
+                <div class="item item-body" id="matters-list-item-container12">
+                    <div  class="item-accordion" id="matters-container4">
                         <ion-list id="matters-list9" ng-show="isMatterShown(matter)">
                             <ion-item class="item-icon-left" id="matters-list-item43">
                             <p>Law Firm Name</p>
@@ -47,8 +47,7 @@
                             <p>Matter Status</p>
                                 <i class="icon No Icon"></i>{{matter.status}}</ion-item>        
                             <ion-item class="item-icon-left" id="matters-list-item46">
-                            <p>Notes</p>
-                                <i class="icon No Icon"></i>
+                            <button class="button button-positive button-block ic-selected">Notes</button>
                             </ion-item>
                         </ion-list>
                     </div>
@@ -57,5 +56,3 @@
             </div>
     </ion-content>
 </ion-view>
-
-0

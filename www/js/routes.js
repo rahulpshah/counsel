@@ -57,9 +57,9 @@ angular.module('app.routes', [])
   })
 
   .state('note', {
-    url: '/note',
+    url: '/note/:item',
     templateUrl: 'templates/note.html',
-    controller: 'noteCtrl'
+    controller: 'matterCtrl'
   })
 
 $urlRouterProvider.otherwise('/side-menu21/profile')
