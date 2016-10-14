@@ -84,8 +84,9 @@ angular.module('app.controllers', [])
                 $scope.modal.hide();
             };
 
-            $scope.addEvent = function () {
-                Events.addEvent($scope.event);
+            $scope.addEvent = function (event) {
+                console.log("Event: "+ event);
+                Events.addEvent(event);
                 $scope.closeModal();
             }
 
