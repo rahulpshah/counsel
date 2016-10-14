@@ -23,16 +23,16 @@ angular.module('app.services', [])
         return events;
     }])
 
-.service('EventTypes', ['$firebaseArray', function ($firebaseArray) {
+    .service('EventTypes', ['$firebaseArray', function ($firebaseArray) {
 
-    var ref = firebase.database().ref().child("calendar_event_types");
+        var ref = firebase.database().ref().child("calendar_event_types");
 
-    var items = $firebaseArray(ref);
-    var event_types = {
-        'items': items,
-    }
-    return event_types;
-}])
+        var items = $firebaseArray(ref);
+        var event_types = {
+            'items': items,
+        }
+        return event_types;
+    }])
     .service('Matters', ['$firebaseArray', function($firebaseArray){
 
         var ref = firebase.database().ref().child("matter");
@@ -47,4 +47,53 @@ angular.module('app.services', [])
         }
 
         return matters;
-    }]);
+    }])
+    .service('EventStatus', ['$firebaseArray', function($firebaseArray){
+
+        var ref = firebase.database().ref().child("calendar_event_statuses");
+
+        var items = $firebaseArray(ref);
+        console.log(items);
+        var event_statuses = {
+            'items' : items,
+        }
+
+        return event_statuses;
+    }])
+    .service('BudgetTypes', ['$firebaseArray', function($firebaseArray){
+
+        var ref = firebase.database().ref().child("matter_budget_types");
+
+        var items = $firebaseArray(ref);
+        console.log(items);
+        var budget_types = {
+            'items' : items,
+        }
+
+        return budget_types;
+    }])
+    .service('MatterStatus', ['$firebaseArray', function($firebaseArray){
+
+        var ref = firebase.database().ref().child("matter_statuses");
+
+        var items = $firebaseArray(ref);
+        console.log(items);
+        var matter_statuses = {
+            'items' : items,
+        }
+
+        return matter_statuses;
+    }])
+    .service('MatterTypes', ['$firebaseArray', function($firebaseArray){
+
+        var ref = firebase.database().ref().child("matter_types");
+
+        var items = $firebaseArray(ref);
+        console.log(items);
+        var matter_types = {
+            'items' : items,
+        }
+
+        return matter_types;
+    }])
+;
