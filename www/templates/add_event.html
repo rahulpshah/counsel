@@ -1,0 +1,15 @@
+<ion-modal-view>
+    <ion-header-bar class='bar-balanced'>
+        <h1 class="title">Add Event</h1>
+        <button class="button button-clear" ng-click="closeModal()">Close</button>
+    </ion-header-bar>
+    <ion-content class='padding'>
+        <label class='item item-input'><input type='text' placeholder='Subject' ng-model='event.subject'/></label>
+        <label class='item item-input'><input type='text' placeholder='Due Date' ng-model='event.due_date'/></label>
+        <label class='item item-input'><input type='text' placeholder='Start Date' ng-model='event.start_date'/></label>
+        <label class='item item-input'><input type='text' placeholder='Priority' ng-model='event.priority'/></label>
+        <label class='item item-input'><input type='text' placeholder='Matter Id' ng-model='event.related_to_matter_id'/></label>
+        <label class='item item-input'><input type='text' placeholder='Type' ng-model='event.type'/></label>
+        <button ng-click='addEvent(event)' class='button button-balanced button-block'>Submit</button>
+    </ion-content>
+</ion-modal-view>

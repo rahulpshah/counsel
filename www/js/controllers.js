@@ -23,7 +23,7 @@ function ($scope, $stateParams) {
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 
-function ($scope, $stateParams, Events) {
+function ($scope, $stateParams, Events, $ionicModal) {
 	//console.log("here's my data", Events.items);
 	console.log(Events.items);
 	console.log(typeof (Events.items));
@@ -61,6 +61,42 @@ function ($scope, $stateParams, Events) {
 	d.setUTCSeconds(x);
 	return d.getDate() + "-" + d.getMonth() + "-" + d.getFullYear();
   }
+    //code for data entry modal
+    $scope.event = {
+        assignee: '',
+        due_date: '',
+        end_date: '',
+        priority: '',
+        related_to_matter_id:'',
+        remind_before: '',
+        status: '',
+        subject: '',
+        type: ''
+    };
+
+//modal to add events
+    $ionicModal.fromTemplateUrl('templates/add_event.html', {
+        scope: $scope,
+        animation: 'slide-in-up'
+    })
+        .then(function(modal) {
+            $scope.modal = modal;
+        });
+
+    $scope.showModal = function(){
+        $scope.modal.show();
+    };
+
+    $scope.closeModal = function(){
+        $scope.event = '';
+        $scope.modal.hide();
+    };
+    
+    $scope.addEvent = function () {
+        Events.addEvent($scope.event);
+        $scope.closeModal();
+    }
+
 })
 
 .controller('menuCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
