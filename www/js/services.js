@@ -1,5 +1,4 @@
 angular.module('app.services', [])
-
 .factory('BlankFactory', [function(){
 
 }])
@@ -32,8 +31,7 @@ angular.module('app.services', [])
   });
   return events;
 }])
-.service('Matters', ['$firebaseArray',function($firebaseArray){
-  console.log("ASdasd");
+.service('Matters', ['$firebaseArray', function($firebaseArray){
   var config = {
     apiKey: "AIzaSyCAAITOFc7ivO2qHvDCBdx_fHWEHJj6Yfk",
     authDomain: "lexisnexishackathon.firebaseapp.com",
@@ -52,9 +50,6 @@ angular.module('app.services', [])
   var matters = {
     'items' : items
   }
-  ref.child('matter').once('value').then(function(data){
-    //do this whenever data is loaded
-    console.log(data);
-  });
+  
   return matters;
 }])

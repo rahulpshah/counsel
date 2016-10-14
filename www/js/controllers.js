@@ -37,8 +37,19 @@ function ($scope, $stateParams, Matters) {
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 
 function ($scope, $stateParams, Events) {
+    //var promise = DataFetch.myFunc();
     $scope.events = Events.items;
+    /*
+    console.log(promise);
+    promise.then(function(data){
+        console.log("Data", data);
 
+        $scope.events = data;
+    }, function(data){
+        console.log("Hello World");
+    });
+    
+    */
     // Accordion Code
     $scope.toggleEvent = function(event) {
         if ($scope.isEventShown(event)) {
