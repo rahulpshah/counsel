@@ -1,6 +1,3 @@
-function convert(epoch_time){
-    
-}
 angular.module('app.controllers', [])
 
 .controller('profileCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
@@ -11,26 +8,6 @@ function ($scope, $stateParams) {
 
 }])
 
-.controller('mattersCtrl', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
-// You can include any angular dependencies as parameters for this function
-// TIP: Access Route Parameters for your page via $stateParams.parameterName
-function ($scope, $stateParams, Matters) {
-    $scope.matters = Matters.items;
-
-    // Accordion Code
-    $scope.toggleMatter = function(matter) {
-        if ($scope.isMatterShown(matter)) {
-          $scope.shownMatter = null;
-        } 
-        else 
-        {
-          $scope.shownMatter = event;
-        }
-    };
-    $scope.isMatterShown = function(matter) {
-        return $scope.shownMatter === matter;
-    };
-})
 
 .controller('eventsCtrl',// The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
@@ -39,17 +16,7 @@ function ($scope, $stateParams, Matters) {
 function ($scope, $stateParams, Events) {
     //var promise = DataFetch.myFunc();
     $scope.events = Events.items;
-    /*
-    console.log(promise);
-    promise.then(function(data){
-        console.log("Data", data);
-
-        $scope.events = data;
-    }, function(data){
-        console.log("Hello World");
-    });
-    
-    */
+    console.log($scope.events);
     // Accordion Code
     $scope.toggleEvent = function(event) {
         if ($scope.isEventShown(event)) {
@@ -78,6 +45,36 @@ function ($scope, $stateParams) {
 
 
 }])
+
+.controller('mattersCtrl', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+// You can include any angular dependencies as parameters for this function
+// TIP: Access Route Parameters for your page via $stateParams.parameterName
+function ($scope, $stateParams, Matters) {
+
+    $scope.matters = Matters.items;
+    // Accordion Code
+    $scope.toggleMatter = function(matter) {
+
+
+        if ($scope.isMatterShown(matter)) {
+          $scope.shownMatter = null;
+        } 
+        else 
+        {
+          $scope.shownMatter = matter;
+        }
+    };
+    $scope.isMatterShown = function(matter) {
+        
+        return $scope.shownMatter === matter;
+    };
+    
+    $scope.convert = function(x){
+        var d = new Date(0);
+        d.setUTCSeconds(x);
+        return d.getDate() + "-" + d.getMonth() + "-" + d.getFullYear();
+    }
+})
 
 .controller('matterCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
