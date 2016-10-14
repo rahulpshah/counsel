@@ -20,7 +20,7 @@ angular.module('app.controllers', [])
                     $scope.shownMatter = null;
                 }
                 else {
-                    $scope.shownMatter = event;
+                    $scope.shownMatter = matter;
                 }
             };
             $scope.isMatterShown = function (matter) {
