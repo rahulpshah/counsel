@@ -22,12 +22,13 @@
         <button id="matters-button2" class="button button-balanced button-block button-outline">Add Matter</button>
         <div id="matters-button-bar1" class="button-bar">
         </div>
-            <div class="list">
-                <div class="list card" id="matters-card24" ng-repeat="matter in matters">
-                        <ion-item class="item-icon-right" id="-list-item41" ng-click="toggleMatter(matter)" ng-class="{active: isMatterShown(matter)}">
-                            <i class="icon ion-edit"></i>{{matter.title}}
-                        </ion-item>
-                <div class="item item-body" id="matters-list-item-container12">
+
+        <div class="list">
+            <div class="list card" id="matters-card24" ng-repeat="matter in matters">
+                <ion-item class="item-icon-right" id="matters-list-item41" ng-click="toggleMatter(matter)" ng-class="{active: isMatterShown(matter)}">
+                    <i class="icon ion-chevron-right" ui-sref="menu.matter({item: matter['$id']})"></i>{{matter.title}}
+                </ion-item>
+                <div class="item item-body"  id="matters-list-item-container12">
                     <div  class="item-accordion" id="matters-container4">
                         <ion-list id="matters-list9" ng-show="isMatterShown(matter)">
                             <ion-item class="item-icon-left" id="matters-list-item43">
