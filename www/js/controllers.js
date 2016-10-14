@@ -23,15 +23,16 @@ function ($scope, $stateParams) {
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
 
-function ($scope, $stateParams, Events, $ionicModal) {
+function ($scope, $stateParams, Events, EventTypes, $ionicModal) {
 	//console.log("here's my data", Events.items);
 	console.log(Events.items);
 	console.log(typeof (Events.items));
 	$scope.events = Events.items;
+    $scope.eventTypes = EventTypes.items;
 
 	//Code to convert epoch to date time
-	console.log(typeof $scope.events);
-	console.log(Events.items.length);
+	// console.log(typeof $scope.events);
+	// console.log(Events.items.length);
 	/*
 	for(var i=0;i<$scope.events.length;i++)
 	{
@@ -56,7 +57,7 @@ function ($scope, $stateParams, Events, $ionicModal) {
   };
   $scope.convert = function(x)
   {
-  	console.log("hello")
+  	// console.log("hello")
 	var d = new Date(0); // The 0 there is the key, which sets the date to the epoch
 	d.setUTCSeconds(x);
 	return d.getDate() + "-" + d.getMonth() + "-" + d.getFullYear();

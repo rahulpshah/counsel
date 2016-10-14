@@ -1,6 +1,5 @@
 angular.module('app.services', [])
-    .service('Events', ['$firebaseArray', function ($firebaseArray) {
-
+    .run(function () {
         var config = {
             apiKey: "AIzaSyCAAITOFc7ivO2qHvDCBdx_fHWEHJj6Yfk",
             authDomain: "lexisnexishackathon.firebaseapp.com",
@@ -9,6 +8,8 @@ angular.module('app.services', [])
             messagingSenderId: "429670093553"
         };
         firebase.initializeApp(config);
+    })
+    .service('Events', ['$firebaseArray', function ($firebaseArray) {
 
         var ref = firebase.database().ref().child("calendar_event");
 
@@ -20,4 +21,15 @@ angular.module('app.services', [])
             }
         }
         return events;
-    }]);
+    }])
+
+.service('EventTypes', ['$firebaseArray', function ($firebaseArray) {
+
+    var ref = firebase.database().ref().child("calendar_event_types");
+
+    var items = $firebaseArray(ref);
+    var event_types = {
+        'items': items,
+    }
+    return event_types;
+}]);
