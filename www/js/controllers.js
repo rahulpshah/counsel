@@ -104,17 +104,20 @@ angular.module('app.controllers', [])
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
         function ($scope, $stateParams) {
-            console.log($stateParams);
+
             var matter_name = $stateParams.item;
-            console.log(matter_name);
+            //console.log(matter_name);
             $scope.matter_name = matter_name;
 
         })
 
-    .controller('noteCtrl', ['$scope', '$stateParams', // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
+    .controller('noteCtrl',  // The following is the constructor function for this page's controller. See https://docs.angularjs.org/guide/controller
 // You can include any angular dependencies as parameters for this function
 // TIP: Access Route Parameters for your page via $stateParams.parameterName
-        function ($scope, $stateParams) {
+        function ($scope, $stateParams, Matters) {
 
-
-        }])
+            $scope.matter = Matters.items.$loaded().then(function(data){
+                    $scope.item = data.$getRecord($stateParams.item);
+                    $scope.notes = $scope.item.notes;
+            });
+        })

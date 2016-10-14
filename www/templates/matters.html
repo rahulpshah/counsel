@@ -48,7 +48,10 @@
                             <p>Matter Status</p>
                                 <i class="icon No Icon"></i>{{matter.status}}</ion-item>        
                             <ion-item class="item-icon-left" id="matters-list-item46">
-                            <button class="button button-positive button-block ic-selected">Notes</button>
+                            
+                            <button class="button button-positive button-block ic-selected" ui-sref="note({item: matter['$id']})">
+                                <i class="icon ion-chevron-right"></i>Notes
+                            </button>
                             </ion-item>
                         </ion-list>
                     </div>

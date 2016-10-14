@@ -1,12 +1,12 @@
 <ion-view title="Matter's Notes" id="page4">
     <ion-content padding="true" class="has-header">
-        <div class="list card" id="matterSNotes-card22">
-            <ion-item id="matterSNotes-list-item62">{{notes.title}}</ion-item>
+        <div class="list card" id="matterSNotes-card22" ng-repeat="note in notes">
+            <ion-item id="matterSNotes-list-item62">{{note.title}}</ion-item>
             <div class="item item-body" id="matterSNotes-list-item-container19">
                 <div id="matterSNotes-container5">
                     <form id="matterSNotes-form4" class="list">
                         <label class="item item-input" id="matterSNotes-textarea1">
-                            <span class="input-label">{{notes.text}}</span><textarea placeholder=""></textarea>
+                         	<textarea placeholder="">{{note.body}}</textarea>
                         </label>
                     </form>
                 </div>
@@ -14,3 +14,5 @@
         </div>
     </ion-content>
 </ion-view>
+
+

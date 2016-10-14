@@ -38,7 +38,7 @@ angular.module('app.services', [])
         var ref = firebase.database().ref().child("matter");
 
         var items = $firebaseArray(ref);
-        console.log(items);
+        //console.log(items);
         var matters = {
             'items' : items,
             'addMatter': function (matter) {
