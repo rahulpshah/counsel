@@ -1,9 +1,63 @@
-<ion-view title="Matters" id="page2">
+<style>
+    .list .item.item-accordion 
+    {
+          line-height: 38px;
+          padding-top: 0;
+          padding-bottom: 0;
+          transition: 0.09s all linear;
+    }
+    .list .item.item-accordion.ng-hide {
+        line-height: 0px;
+    }
+    .list .item.item-accordion.ng-hide-add,
+    .list .item.item-accordion.ng-hide-remove {
+        display: block !important;
+    }
+</style>  
+<script>
+
+</script>
+<ion-view title="Matters" id="page3">
     <ion-content padding="true" class="has-header">
-        <div class="item item-body" id="matters-list-item-container1">
-            <ion-list id="matters-list2">
-                <ion-item id="matters-list-item4" ui-sref="menu.matter">Item</ion-item>
-            </ion-list>
+        <button id="matters-button2" class="button button-balanced  button-block button-outline">Add Matter</button>
+        <div id="matters-button-bar1" class="button-bar">
         </div>
+            <div class="list">
+                <div class="list card" id="matters-card24" ng-repeat="matter in matters">
+                        <ion-item class="item-icon-right" id="matters-list-item41" ng-click="toggleMatter(matter)" ng-class="{active: isMatterShown(matter)}">
+                            <i class="icon ion-edit"></i>{{matter.lawfirm_name}}
+                        </ion-item>
+                <div class="item item-body"  id="matters-list-item-container12">
+                    <div  class="item-accordion" id="matters-container4">
+                        <ion-list id="matters-list9" ng-show="isMatterShown(matter)">
+                        <!--
+                            <ion-item class="item-icon-left" id="matters-list-item43">
+                            <p>Start Date</p>
+                                <i class="icon No Icon"></i>{{convert(matter.start_date)}}</ion-item>
+                            <ion-item class="item-icon-left" id="matters-list-item46">
+                            <p>End Date</p>
+                                <i class="icon No Icon"></i>{{convert(matter.due_date)}}</ion-item>
+                            <ion-item class="item-icon-left" id="matters-list-item46">
+                            <p>Due Date</p>
+                                <i class="icon No Icon"></i>{{convert(matter.end_date)}}</ion-item>
+                            <ion-item class="item-icon-left" id="matters-list-item47">
+                            <p>Priority</p>
+                                <i class="icon No Icon"></i>{{matter.priority}}</ion-item>
+                            <ion-item class="item-icon-left" id="matters-list-item48" ui-sref="menu.matter">
+                            <p>Matter</p>
+                                <i class="icon No Icon"></i>{{matter.related_to_matter_id}}</ion-item>
+                            <ion-item class="item-icon-left" id="matters-list-item49">
+                            <p>Status</p>
+                                <i class="icon No Icon"></i>{{matter.status}}</ion-item>
+                            <ion-item class="item-icon-left" id="matters-list-item55">
+                            <p>Type</p>
+                                <i class="icon No Icon"></i>{{matter.type}}</ion-item>
+                        -->
+                        </ion-list>
+                    </div>
+                </div>
+                </div>
+            </div>
     </ion-content>
 </ion-view>
+
