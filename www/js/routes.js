@@ -47,7 +47,7 @@ angular.module('app.routes', [])
   })
 
   .state('menu.matter', {
-    url: '/matter',
+    url: '/matter/:item',
     views: {
       'side-menu21': {
         templateUrl: 'templates/matter.html',

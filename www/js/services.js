@@ -32,4 +32,19 @@ angular.module('app.services', [])
         'items': items,
     }
     return event_types;
-}]);
+}])
+    .service('Matters', ['$firebaseArray', function($firebaseArray){
+
+        var ref = firebase.database().ref().child("matter");
+
+        var items = $firebaseArray(ref);
+        console.log(items);
+        var matters = {
+            'items' : items,
+            'addMatter': function (matter) {
+                items.$add(matter);
+            }
+        }
+
+        return matters;
+    }]);
